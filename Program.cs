@@ -8,10 +8,11 @@ switch (input)
 {
     case 1:
         Console.WriteLine("Add animal");
-        Game.ShowAddAminalPromt();
+        Game.ShowAddAminalPrompt();
         break;
     case 2:
         Console.WriteLine("Take care of animal");
+        Game.ShowAddAminalPrompt();
         break;
 }
 Console.WriteLine(input);
@@ -21,3 +22,5 @@ Console.WriteLine(input);
 
 // Lines that ask the user questions relevant to an executed task
 // Read user input converted to animal attributes
+
+//Start with pick animal, then pick care choice!!!! NB
