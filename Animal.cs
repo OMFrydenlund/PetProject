@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PetProject
 {
-    class Animal
+    public class Animal
     {
         public Animal(string name, string type, int age)
         {
