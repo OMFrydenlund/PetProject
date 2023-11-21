@@ -1,7 +1,7 @@
 ﻿// Add/take care of animal prompt (Press 1 or 2)
 
 using PetProject;
-
+Game.animalPen.Add(new Animal("Bob", "Bobcat", 43));
 Console.WriteLine("Add/take care of animal (Press 1 or 2)");
 var input = Convert.ToInt32(Console.ReadLine());
 switch (input)
@@ -11,8 +11,8 @@ switch (input)
         Game.ShowAddAminalPrompt();
         break;
     case 2:
-        Console.WriteLine("Take care of animal");
-        Game.ShowAddAminalPrompt();
+        Console.WriteLine("How would you like to take care of PLACEHOLDER?");
+        Game.ShowAnimalCarePrompt();
         break;
 }
 Console.WriteLine(input);

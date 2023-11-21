@@ -24,6 +24,17 @@ public class Game
     }
     public static void ShowAnimalCarePrompt() 
     {
-        
+        foreach (var animal in animalPen) 
+        {
+            Console.WriteLine(animal.Name);
+            Console.Write("Type: " + animal.Type);
+            Console.Write("Age: " + animal.Age);
+        }
+        //Console.WriteLine("Which animal would you like to take care of?");
+        //Console.ReadLine();
+        //var index = Console.ReadLine();
+        //Console.WriteLine("Feed placeholder?");
+        //Console.WriteLine("Snuggle with placeholder?");
+        //Console.WriteLine("Take placeholder out to poop?");
     }
 }

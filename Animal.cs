@@ -14,8 +14,8 @@ namespace PetProject
             Type = type;
             Age = age;
         }
-        private string Name;
-        private int Age;
-        private string Type;
+        public string Name;
+        public int Age;
+        public string Type;
     }
 }
