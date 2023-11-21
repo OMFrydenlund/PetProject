@@ -17,5 +17,20 @@ namespace PetProject
         public string Name;
         public int Age;
         public string Type;
+
+        public void Feed()
+        {
+            Console.WriteLine($"{Name} is full!");
+        }
+
+        public void Snuggle()
+        {
+            Console.WriteLine($"{Name} is happy!");
+        }
+
+        public void Poop()
+        {
+            Console.WriteLine($"Oh no! I have to change my shoous!!");
+        }
     }
 }

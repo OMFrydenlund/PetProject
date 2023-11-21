@@ -3,12 +3,31 @@ namespace PetProject;
 public class Game
 {
 
-    public static List<Animal> animalPen = new List<Animal>();
-    public static void ShowAddAminalPrompt()
+    public static List<Animal> AnimalPen = new List<Animal>();
+    
+    public static void Run()
     {
-        string nameQuestion = "What will you call it?";
-        string typeQuestion = "What kind of animal is it?";
-        string ageQuestion = "How old is your animal?";
+        Console.Clear();
+        Console.WriteLine("Add/take care of animal (Press 1 or 2) ");
+        var input = Convert.ToInt32(Console.ReadLine());
+        switch (input)
+        {
+            case 1:
+                Console.WriteLine("Add animal");
+                Game.ShowAddAnimalPrompt();
+                break;
+            case 2:
+                Game.ShowAnimalCarePrompt();
+                break;
+        }
+    }
+    public static void ShowAddAnimalPrompt()
+    {
+        string nameQuestion = "What will you call it? ";
+        string typeQuestion = "What kind of animal is it? ";
+        string ageQuestion = "How old is your animal? ";
+        
+        Console.Clear();
 
         Console.Write(nameQuestion);
         var name = Console.ReadLine();
@@ -20,21 +39,41 @@ public class Game
         var age = Convert.ToInt32(Console.ReadLine());
 
         var animal = new Animal(name, type, age);
-        animalPen.Add(animal);
+        AnimalPen.Add(animal);
+        Run();
     }
-    public static void ShowAnimalCarePrompt() 
+    public static void ShowAnimalCarePrompt()
     {
-        foreach (var animal in animalPen) 
+        Console.Clear();
+        for (int index = 0; index < AnimalPen.Count; index++)
         {
-            Console.WriteLine(animal.Name);
-            Console.Write("Type: " + animal.Type);
-            Console.Write("Age: " + animal.Age);
+            var animal = AnimalPen[index];
+            Console.WriteLine($"({index}) {animal.Name} - Type: {animal.Type} - Age: {animal.Age}");
         }
-        //Console.WriteLine("Which animal would you like to take care of?");
-        //Console.ReadLine();
-        //var index = Console.ReadLine();
-        //Console.WriteLine("Feed placeholder?");
-        //Console.WriteLine("Snuggle with placeholder?");
-        //Console.WriteLine("Take placeholder out to poop?");
+        Console.WriteLine("Which animal would you like to take care of? ");
+        var selectedIndex = Convert.ToInt32(Console.ReadLine());
+        Console.Clear();
+        var selectedAnimal = AnimalPen[selectedIndex];
+        Console.WriteLine($"How would you like to take care of {selectedAnimal.Name} the {selectedAnimal.Type}? ");
+        Console.WriteLine($"(1) Feed {selectedAnimal.Name}? ");
+        Console.WriteLine($"(2) Snuggle with {selectedAnimal.Name}? ");
+        Console.WriteLine($"(3) Take {selectedAnimal.Name} out to poop? ");
+        var selectedAction = Convert.ToInt32(Console.ReadLine());
+        switch (selectedAction)
+        {
+            case 1:
+                selectedAnimal.Feed();
+                break;
+            case 2:
+                selectedAnimal.Snuggle();
+                break;
+            case 3:
+                selectedAnimal.Poop();
+                break;
+        }
+
+        Console.Write("Press enter to continue... ");
+        Console.ReadLine();
+        Run();
     }
 }
