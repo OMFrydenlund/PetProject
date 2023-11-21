@@ -14,10 +14,10 @@ public class Game
         {
             case 1:
                 Console.WriteLine("Add animal");
-                Game.ShowAddAnimalPrompt();
+                ShowAddAnimalPrompt();
                 break;
             case 2:
-                Game.ShowAnimalCarePrompt();
+                ShowAnimalCarePrompt();
                 break;
         }
     }
