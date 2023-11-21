@@ -14,9 +14,9 @@ namespace PetProject
             Type = type;
             Age = age;
         }
-        public string Name;
-        public int Age;
-        public string Type;
+        public string Name { get; private set; }
+        public int Age { get; private set; }
+        public string Type { get; private set; }
 
         public void Feed()
         {
