@@ -77,9 +77,4 @@ public class Game
         Console.ReadLine();
         Run();
     }
-
-    internal static void HappinessDecay()
-    {
-        Console.WriteLine("Test");
-    }
 }
