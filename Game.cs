@@ -1,3 +1,4 @@
+
 namespace PetProject;
 
 public class Game
@@ -48,7 +49,7 @@ public class Game
         for (int index = 0; index < AnimalPen.Count; index++)
         {
             var animal = AnimalPen[index];
-            Console.WriteLine($"({index}) {animal.Name} - Type: {animal.Type} - Age: {animal.Age}");
+            Console.WriteLine($"({index}) {animal.Name} - Type: {animal.Type} - Age: {animal.Age} - Happiness: {animal.HappinessMeter}");
         }
         Console.WriteLine("Which animal would you like to take care of? ");
         var selectedIndex = Convert.ToInt32(Console.ReadLine());
@@ -75,5 +76,10 @@ public class Game
         Console.Write("Press enter to continue... ");
         Console.ReadLine();
         Run();
+    }
+
+    internal static TimerCallback HappinessDecay()
+    {
+        throw new NotImplementedException();
     }
 }
