@@ -38,5 +38,10 @@ namespace PetProject
             Console.WriteLine($"Oh no! I have to change my shoous!!");
             HappinessMeter += 30;
         }
+
+        public void LessHappy()
+        {
+            HappinessMeter -= 5;
+        }
     }
 }

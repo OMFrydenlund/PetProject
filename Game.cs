@@ -78,8 +78,8 @@ public class Game
         Run();
     }
 
-    internal static TimerCallback HappinessDecay()
+    internal static void HappinessDecay()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Test");
     }
 }
