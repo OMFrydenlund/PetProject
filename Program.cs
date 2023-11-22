@@ -22,13 +22,11 @@ class Program
     
     static void IntervalTimer()
     {
-        while (true)
+        foreach (var animal in Game.AnimalPen)
         {
-            foreach (var animal in Game.AnimalPen)
-            {
-                animal.LessHappy();
-            }
-            Thread.Sleep(3000);
+            animal.LessHappy();
         }
+        Thread.Sleep(3000);
+        IntervalTimer();
     }
 }
