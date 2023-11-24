@@ -4,11 +4,12 @@
 // Lines that ask the user questions relevant to an executed task
 // Read user input converted to animal attributes
 // Start with pick animal, then pick care choice!!!! NB
-// ---
 // MinMax values for happiness meter
 // What happens when you have no animals
+// ---
 // Jealousy trigger and effect
 // Countermeasure for faulty input (incompatible user input according to how code is written)
+// BUT WHAT ABOUT DEATH
 
 using PetProject;
 
@@ -21,7 +22,6 @@ class Program
  
         // start the thread
         t.Start();
-        Game.AnimalPen.Add(new Animal("Bob", "Bobcat", 43));
         Game.Run();
     }
     
@@ -31,7 +31,7 @@ class Program
         {
             animal.LessHappy();
         }
-        Thread.Sleep(3000);
+        Thread.Sleep(6000);
         IntervalTimer();
     }
 }

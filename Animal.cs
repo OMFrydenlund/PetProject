@@ -24,24 +24,29 @@ namespace PetProject
         public void Feed()
         {
             Console.WriteLine($"{Name} is full!");
-            HappinessMeter += 5;
+            HappinessModifier(5);
+        }
+
+        private void HappinessModifier(int Change)
+        {
+            HappinessMeter = Math.Clamp(HappinessMeter + Change, 0, 100);
         }
 
         public void Snuggle()
         {
             Console.WriteLine($"{Name} is happy!");
-            HappinessMeter += 15;
+            HappinessModifier(15);
         }
 
         public void Poop()
         {
             Console.WriteLine($"Oh no! I have to change my shoous!!");
-            HappinessMeter += 30;
+            HappinessModifier(30);
         }
 
         public void LessHappy()
         {
-            HappinessMeter -= 5;
+            HappinessModifier(-5);
         }
     }
 }

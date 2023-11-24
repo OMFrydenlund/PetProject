@@ -46,13 +46,29 @@ public class Game
     public static void ShowAnimalCarePrompt()
     {
         Console.Clear();
+        if (AnimalPen.Count > 0)
+        {
+            ShowAnimalPen();
+        }
+        else 
+        {
+            Console.WriteLine("You currently have no animals, choose something else.");
+        }
+
+        Console.Write("Press Enter to continue... ");
+        Console.ReadLine();
+        Run();
+    }
+
+    private static void ShowAnimalPen()
+    {
         for (int index = 0; index < AnimalPen.Count; index++)
         {
             var animal = AnimalPen[index];
             Console.WriteLine($"({index}) {animal.Name} - Type: {animal.Type} - Age: {animal.Age} - Happiness: {animal.HappinessMeter}");
         }
         Console.WriteLine("Which animal would you like to take care of? ");
-        var selectedIndex = GetIntInput(AnimalPen.Count-1, "You dont have that many animals, try again");
+        var selectedIndex = GetIntInput(AnimalPen.Count - 1, "You dont have that many animals, try again");
         Console.Clear();
         var selectedAnimal = AnimalPen[selectedIndex];
         Console.WriteLine($"How would you like to take care of {selectedAnimal.Name} the {selectedAnimal.Type}? ");
@@ -72,10 +88,6 @@ public class Game
                 selectedAnimal.Poop();
                 break;
         }
-
-        Console.Write("Press enter to continue... ");
-        Console.ReadLine();
-        Run();
     }
 
     private static int GetIntInput(int max, string errorMessage = "Number out of range!")
